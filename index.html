@@ -11,30 +11,50 @@
             padding: 0;
             color: #333;
         }
-		.awards-list p {
+        .awards-list p {
             line-height: 0.3;
-			font-size: 16px;
+            font-size: 16px;
         }
-		.imgtable {
-			border-spacing: 1px;
-		}
+        .imgtable {
+            border-spacing: 1px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fefefe;  /* Match this color with your page's main color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(140, 140, 140, 0.2);
+            z-index: 1000;
+        }
+        .navbar a {
+            margin: 0 15px;
+            color: #30305a;
+            text-decoration: none;
+            font-weight: bold;
+        }
         .container {
             display: flex;
             max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
+            padding-top: 50px;
         }
         .sidebar {
             width: 29%;
             padding: 20px;
             box-sizing: border-box;
-			position: fixed;
+            position: fixed;
         }
         .sidebar h2 {
             margin: 15px 0;
             font-family: 'Trebuchet MS';
-			font-weight: 50;
+            font-weight: 50;
             font-size: 29px;
         }
         .sidebar h3 {
@@ -46,7 +66,7 @@
             width: 70%;
             padding: 20px;
             box-sizing: border-box;
-			margin-left: 29%;
+            margin-left: 29%;
         }
         h1, h2, h3 {
             margin: 0 0 10px 0;
@@ -95,6 +115,15 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#roadmap">Research Interest</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#ta">TAs</a>
+        <a href="#service-work">Service Work</a>
+    </div>
     <div class="container">
         <div class="sidebar">
             <img src="files/zhangyk.jpg" alt="Profile Picture" class="profile-pic">
@@ -102,7 +131,7 @@
             <h3>张逸凯</h3>
             <p>Nanjing University</p>
             <p>Ph.D. Student of <a href="https://www.lamda.nju.edu.cn/CH.MainPage.ashx"><b><span style="color: rgb(232, 95, 46);">L</span><span style="color: rgb(74, 75, 154);">A</span><span style="color: rgb(232, 95, 46);">M</span><span style="color: rgb(74, 75, 154);">DA</span></b> Group</a></p>
-			<p><b>LLMs, Multimodal LLMs</b><br><span style="font-weight: 200; font-family:'Lucida Sans', sans-serif; font-size: 12px;">Training, Recommendation, and Management of LLMs</span></p>
+            <p><b>LLMs, Multimodal LLMs</b><br><span style="font-weight: 200; font-family:'Lucida Sans', sans-serif; font-size: 12px;">Training, Recommendation, and Management of LLMs</span></p>
             <div class="contact-info">
                 <a href="mailto:zhangyk@lamda.nju.edu.cn">🌒 zhangyk@lamda.nju.edu.cn</a>
                 <a href="https://github.com/zhangyikaii">🌓 Github</a>
@@ -114,7 +143,7 @@
             </div>
         </div>
         <div class="content">
-            <div class="about">
+            <div class="about" id="about">
                 <h2>🍼 About Me</h2>
                 <p>
                     I am a <span style="font-weight: bold;">second-year Ph.D.</span> student at the <a href="https://ai.nju.edu.cn/">School of Artificial Intelligence</a> in <a href="https://www.nju.edu.cn/">Nanjing University</a> advised by Associate Professor <a href="http://www.lamda.nju.edu.cn/yehj"> Han-Jia Ye (叶翰嘉)</a> and Professor <a href="http://www.lamda.nju.edu.cn/zhandc">De-Chuan Zhan (詹德川)</a>.
@@ -123,15 +152,15 @@
                     I received my <span style="font-weight: bold;">B.Sc.</span> degree from <a href="https://cs.nju.edu.cn/">Computer Science and Technology Department</a>, and statistics <span style="font-weight: bold;">minor specialty</span> from <a href="https://math.nju.edu.cn/">School of Mathematics</a> in Nanjing University. In the same year, I was admitted to study for a <span style="font-weight: bold;">M.Sc.</span> degree without entrance examination. From September 2023, I started my Ph.D. degree.
                 </p>
             </div>
-			<div class="roadmap">
-				<h2>🌟 Research Interest & Roadmap</h2>
-					<div style="display: flex; justify-content: center; align-items: center;">
-						<a href="files/research_roadmap.jpg">
-							<img src="files/research_roadmap.jpg" alt="WSFG" style="width: 85%; height: auto;"/>
-						</a>
-					</div>
-			</div>
-            <div class="publications">
+            <div class="roadmap" id="roadmap">
+                <h2>🌟 Research Interest & Roadmap</h2>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a href="files/research_roadmap.jpg">
+                            <img src="files/research_roadmap.jpg" alt="WSFG" style="width: 85%; height: auto;"/>
+                        </a>
+                    </div>
+            </div>
+            <div class="publications" id="publications">
                 <h2>🥟 Publications</h2>
                 <h3>&nbsp;&nbsp;&nbsp;Conference Papers</h3>
                 <table class="imgtable" style="border-spacing: 1px;">
@@ -321,47 +350,47 @@
                     </tr>
                 </table>
             </div>
-			<div class="awards">
-				<h2>🍚 Education</h2>
-				<ul class="awards-list">
-					<li><p><em>2023.09 - Now</em>, Ph.D., School of Artificial Intelligence, Nanjing University</p></li>
-					<li><p><em>2021.09 - 2023.06</em>, Master, School of Artificial Intelligence, Nanjing University</p></li>
-					<li><p><em>2017.09 - 2021.06</em>, Undergraduate, Computer Science and Technology Department, Nanjing University</p></li>
-					<li><p><em>2017.09 - 2021.06</em>, Minor Specialty, School of Mathematics, Nanjing University</p></li>
-				</ul>
-			</div>
-			<div class="awards">
-				<h2>🍰 Awards</h2>
-				<ul class="awards-list">
-					<li><p>国家奖学金. National Scholarship. <em>2022</em></p></li>
-					<li><p>南京大学优秀研究生标兵. <em>2023</em></p></li>
-					<li><p>华为突出贡献奖. <em>2023</em></p></li>
-					<li><p>兴业银行奖学金. Industrial Bank Co., Ltd. Scholarship. <em>2023</em></p></li>
-					<li><p>江苏银行奖学金. Bank Of Jiangsu Scholarship. <em>2024</em></p></li>
-					<li><p>AI Hackathon (Baichuan Intelligent x Amazon AWS) Awesome Star. <em>2023</em></p></li>
-				</ul>
-			</div>
-			<div class="awards">
-				<h2>🍦 Teaching Assistant</h2>
-				<ul class="awards-list">
-					<li><p><a href="https://www.lamda.nju.edu.cn/yehj/ml2022/ml2022.html">Introduction to Machine Learning</a>. (For undergraduate students, Spring, <em>2022</em>; Autumn, <em>2022</em>)</p></li>
-					<li><p><a href="https://github.com/zhangyikaii/Auxiliary-Material-for-AI-Platform-Application-Course/wiki">AI Platform Application</a>. (For undergraduate students, Spring, <em>2022</em>)</p></li>
-					<li><p>Real Analysis and Functional Analysis. (For undergraduate students, Spring, <em>2023</em>)</p></li>
-				</ul>
-			</div>
-			<div class="awards">
-				<h2>🍞 Service Work</h2>
-				<ul class="awards-list">
-					<li><p>南京大学人工智能学院研究生会主席. <em>2022</em></p></li>
-					<li><p>南京大学人工智能学院乒乓球队队长. <em>2022</em></p></li>
-				</ul>
-			</div>
-			<br><br>
-			<p align="center">
-				<a href="https://github.com/zhangyikaii" alt="GitHub"><img src="./files/github.svg"></a> &nbsp;
-				<a href="mailto:zhangyk@lamda.nju.edu.cn" alt="Contact me"><img src="./files/email.svg"></a> &nbsp;
-				<a href="wechat-id:cifar10" alt="WeChat"><img src="./files/wechat.svg"></a>
-			</p>
+            <div class="awards" id="education">
+                <h2>🍚 Education</h2>
+                <ul class="awards-list">
+                    <li><p><em>2023.09 - Now</em>, Ph.D., School of Artificial Intelligence, Nanjing University</p></li>
+                    <li><p><em>2021.09 - 2023.06</em>, Master, School of Artificial Intelligence, Nanjing University</p></li>
+                    <li><p><em>2017.09 - 2021.06</em>, Undergraduate, Computer Science and Technology Department, Nanjing University</p></li>
+                    <li><p><em>2017.09 - 2021.06</em>, Minor Specialty, School of Mathematics, Nanjing University</p></li>
+                </ul>
+            </div>
+            <div class="awards" id="awards">
+                <h2>🍰 Awards</h2>
+                <ul class="awards-list">
+                    <li><p>国家奖学金. National Scholarship. <em>2022</em></p></li>
+                    <li><p>南京大学优秀研究生标兵. <em>2023</em></p></li>
+                    <li><p>华为突出贡献奖. <em>2023</em></p></li>
+                    <li><p>兴业银行奖学金. Industrial Bank Co., Ltd. Scholarship. <em>2023</em></p></li>
+                    <li><p>江苏银行奖学金. Bank Of Jiangsu Scholarship. <em>2024</em></p></li>
+                    <li><p>AI Hackathon (Baichuan Intelligent x Amazon AWS) Awesome Star. <em>2023</em></p></li>
+                </ul>
+            </div>
+            <div class="awards" id="ta">
+                <h2>🍦 Teaching Assistant</h2>
+                <ul class="awards-list">
+                    <li><p><a href="https://www.lamda.nju.edu.cn/yehj/ml2022/ml2022.html">Introduction to Machine Learning</a>. (For undergraduate students, Spring, 2022; Autumn, <em>2022</em>)</p></li>
+                    <li><p><a href="https://github.com/zhangyikaii/Auxiliary-Material-for-AI-Platform-Application-Course/wiki">AI Platform Application</a>. (For undergraduate students, Spring, <em>2022</em>)</p></li>
+                    <li><p>Real Analysis and Functional Analysis. (For undergraduate students, Spring, <em>2023</em>)</p></li>
+                </ul>
+            </div>
+            <div class="awards" id="service-work">
+                <h2>🍞 Service Work</h2>
+                <ul class="awards-list">
+                    <li><p>南京大学人工智能学院研究生会主席. <em>2022</em></p></li>
+                    <li><p>南京大学人工智能学院乒乓球队队长. <em>2022</em></p></li>
+                </ul>
+            </div>
+            <br><br>
+            <p align="center">
+                <a href="https://github.com/zhangyikaii" alt="GitHub"><img src="./files/github.svg"></a> &nbsp;
+                <a href="mailto:zhangyk@lamda.nju.edu.cn" alt="Contact me"><img src="./files/email.svg"></a> &nbsp;
+                <a href="wechat-id:cifar10" alt="WeChat"><img src="./files/wechat.svg"></a>
+            </p>
         </div>
     </div>
 </body>
