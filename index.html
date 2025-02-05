@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yi-Kai Zhang (张逸凯) - Homepage</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+		.awards-list p {
+            line-height: 0.3;
+			font-size: 16px;
+        }
+		.imgtable {
+			border-spacing: 1px;
+		}
+        .container {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar {
+            width: 29%;
+            padding: 20px;
+            box-sizing: border-box;
+			position: fixed;
+        }
+        .sidebar h2 {
+            margin: 15px 0;
+            font-family: 'Trebuchet MS';
+			font-weight: 50;
+            font-size: 29px;
+        }
+        .sidebar h3 {
+            margin: 2px 0;
+            font-family: 'Trebuchet MS', serif;
+            font-size: 28px;
+        }
+        .content {
+            width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+			margin-left: 29%;
+        }
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Charter', serif;
+        }
+        .profile-pic {
+            border-radius: 20%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+        }
+        .contact-info a {
+            display: block;
+            margin: 5px 0;
+            color: #4b4b7c;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #30305a;
+        }
+        .about h2 {
+            color: #6b6b9e;
+        }
+        .roadmap h2 {
+            color: #4a4a7d;
+        }
+        .publications h2 {
+            color: #37375e;
+            font-family: 'Charter', serif;
+        }
+        .publications h3 {
+            color: #2a3354;
+            font-family: 'Charter', serif;
+        }
+        .awards h2 {
+            color: #50505d;
+            font-family: 'Charter', serif;
+        }
+        .paper {
+            margin-bottom: 20px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="files/zhangyk.jpg" alt="Profile Picture" class="profile-pic">
+            <h2><span style="font-weight: bold;">Yi-Kai</span> Zhang</h2>
+            <h3>张逸凯</h3>
+            <p>Nanjing University</p>
+            <p>Ph.D. Student of <a href="https://www.lamda.nju.edu.cn/CH.MainPage.ashx"><b><span style="color: rgb(232, 95, 46);">L</span><span style="color: rgb(74, 75, 154);">A</span><span style="color: rgb(232, 95, 46);">M</span><span style="color: rgb(74, 75, 154);">DA</span></b> Group</a></p>
+			<p><b>LLMs, Multimodal LLMs</b><br><span style="font-weight: 200; font-family:'Lucida Sans', sans-serif; font-size: 12px;">Training, Recommendation, and Management of LLMs</span></p>
+            <div class="contact-info">
+                <a href="mailto:zhangyk@lamda.nju.edu.cn">🌒 zhangyk@lamda.nju.edu.cn</a>
+                <a href="https://github.com/zhangyikaii">🌓 Github</a>
+                <a href="https://dblp.org/pid/330/8964.html">🌔 DBLP</a>
+                <a href="https://scholar.google.com/citations?hl=en&user=T6ggORQAAAAJ">🌕 Google Scholar</a>
+                <a href="wechat_id:cifar10">🌖 WeChat</a>
+                <a href="rednote_id:11814657725">🌗 RedNote</a>
+                <a href="https://github.com/Now-Join-Us">🌘 Code Space of <em>Now-Join-Us</em> Group</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="about">
+                <h2>🍼 About Me</h2>
+                <p>
+                    I am a <span style="font-weight: bold;">second-year Ph.D.</span> student at the <a href="https://ai.nju.edu.cn/">School of Artificial Intelligence</a> in <a href="https://www.nju.edu.cn/">Nanjing University</a> advised by Associate Professor <a href="http://www.lamda.nju.edu.cn/yehj"> Han-Jia Ye (叶翰嘉)</a> and Professor <a href="http://www.lamda.nju.edu.cn/zhandc">De-Chuan Zhan (詹德川)</a>.
+                </p>
+                <p>
+                    I received my <span style="font-weight: bold;">B.Sc.</span> degree from <a href="https://cs.nju.edu.cn/">Computer Science and Technology Department</a>, and statistics <span style="font-weight: bold;">minor specialty</span> from <a href="https://math.nju.edu.cn/">School of Mathematics</a> in Nanjing University. In the same year, I was admitted to study for a <span style="font-weight: bold;">M.Sc.</span> degree without entrance examination. From September 2023, I started my Ph.D. degree.
+                </p>
+            </div>
+			<div class="roadmap">
+				<h2>🌟 Research Interest & Roadmap</h2>
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<a href="files/research_roadmap.jpg">
+							<img src="files/research_roadmap.jpg" alt="WSFG" style="width: 85%; height: auto;"/>
+						</a>
+					</div>
+			</div>
+            <div class="publications">
+                <h2>🥟 Publications</h2>
+                <h3>&nbsp;&nbsp;&nbsp;Conference Papers</h3>
+                <table class="imgtable" style="border-spacing: 1px;">
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/zooprobe_logo.jpg">
+                                <img src="files/zooprobe_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6; margin: 0;">
+                                <li>
+                                    <p>
+                                        <b>ZooProbe: A Data Engine for Evaluating, Exploring, and Evolving Large-scale Training Data for Multimodal LLMs</b><br>
+                                        <b>Yi-Kai Zhang</b>, Shiyin Lu, Qing-Guo Chen, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">ICLR 2025</span></b>.
+                                        <a href="https://openreview.net/pdf?id=T4LtGj7us1">[Paper]</a>
+                                        <a href="https://github.com/AIDC/ZooProbe_DataEngine">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/model_sat_logo.jpg">
+                                <img src="files/model_sat_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6; margin: 0;">
+                                <li>
+                                    <p>
+                                        <b>Capability Instruction Tuning</b><br>
+                                        <b>Yi-Kai Zhang</b>, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">AAAI 2025</span></b>. <span style="color: rgb(187, 138, 138);">CCF-A</span>.
+                                        <a href="">[Paper]</a>
+                                        <a href="https://github.com/Now-Join-Us/Model-SAT">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/wings_logo.jpg">
+                                <img src="files/wings_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6; margin: 0;">
+                                <li>
+                                    <p>
+                                        <b>Wings: Learning Multimodal LLMs without Text-only Forgetting</b><br>
+                                        <b>Yi-Kai Zhang</b>, Shiyin Lu, Yang Li, Yanqing Ma, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">NeurIPS 2024</span></b>. <span style="color: rgb(187, 138, 138);">CCF-A</span>.
+                                        <a href="https://arxiv.org/pdf/2406.03496">[Paper]</a>
+                                        <a href="https://github.com/AIDC-AI/Wings">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/model_spider_logo.jpg">
+                                <img src="files/model_spider_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6; margin: 0;">
+                                <li>
+                                    <p>
+                                        <b>Model Spider: Learning to Rank Pre-Trained Models Efficiently</b><br>
+                                        <b>Yi-Kai Zhang</b>, Ting-Ji Huang, Yao-Xiang Ding, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">NeurIPS 2023</span></b>. <span style="color: rgb(187, 138, 138);">CCF-A</span>.
+                                        <a href="https://arxiv.org/abs/2306.03900">[Paper]</a>
+                                        <a href="https://github.com/zhangyikaii/Model-Spider">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/chi_model_logo.jpg">
+                                <img src="files/chi_model_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6; margin: 0;">
+                                <li>
+                                    <p>
+                                        <b>Learning Debiased Representations via Conditional Attribute Interpolation</b><br>
+                                        <b>Yi-Kai Zhang</b>, Qi-Wei Wang, Han-Jia Ye, De-Chuan Zhan.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">CVPR 2023</span></b>. <span style="color: rgb(187, 138, 138);">CCF-A</span>.
+                                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Learning_Debiased_Representations_via_Conditional_Attribute_Interpolation_CVPR_2023_paper.pdf">[Paper]</a>
+                                        <a href="https://github.com/zhangyikaii/chi-square">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/teen_logo.jpg">
+                                <img src="files/teen_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6;">
+                                <li>
+                                    <p>
+                                        <b>Few-Shot Class-Incremental Learning via Training-Free Prototype Calibration</b><br>
+                                        Qi-Wei Wang, Da-Wei Zhou, <b>Yi-Kai Zhang</b>, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">NeurIPS 2023</span></b>. <span style="color: rgb(187, 138, 138);">CCF-A</span>.
+                                        <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/30dfe47a3ccbee68cffa0c19ccb1bc00-Paper-Conference.pdf">[Paper]</a>
+                                        <a href="https://github.com/wangkiw/TEEN">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/model_cat_logo.jpg">
+                                <img src="files/model_cat_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6;">
+                                <li>
+                                    <p>
+                                        <b>Audio-Visual Generalized Few-Shot Learning with Prototype-Based Co-Adaptation</b><br>
+                                        <b>Yi-Kai Zhang</b>, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan.<br>
+                                        <b><span style="color: rgb(173, 11, 11);">INTERSPEECH 2022</span></b>. <span style="color: rgb(187, 138, 138);">CCF-C</span>.
+                                        <a href="https://www.isca-archive.org/interspeech_2022/zhang22k_interspeech.pdf">[Paper]</a>
+                                        <a href="https://github.com/zhangyikaii/Proto-CAT">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Toolboxes</h3>
+                <table class="imgtable">
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/omnievalkit_logo.jpg">
+                                <img src="files/omnievalkit_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6;">
+                                <li>
+                                    <p>
+                                        <b>OmniEvalKit: A Modular, Lightweight Toolbox for Evaluating Large Language Model and its Omni-Extensions</b><br>
+                                        <b>Yi-Kai Zhang</b>, Xu-Xiang Zhong, Shiyin Lu, Qing-Guo Chen, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <a href="https://arxiv.org/pdf/2412.06693">[Paper]</a>
+                                        <a href="https://github.com/Now-Join-Us/OmniEvalKit">[Code]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="imgtable">
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <a href="files/zhijian_logo.jpg">
+                                <img src="files/zhijian_logo.jpg" alt="WSFG" height="110px">
+                            </a>
+                        </td>
+                        <td align="left">
+                            <ul style="line-height: 1.6;">
+                                <li>
+                                    <p>
+                                        <b>ZhiJian: A Unifying and Rapidly Deployable Toolbox for Pre-trained Model Reuse</b><br>
+                                        <b>Yi-Kai Zhang</b>, Lu Ren, Chao Yi, Qi-Wei Wang, De-Chuan Zhan, Han-Jia Ye.<br>
+                                        <a href="https://arxiv.org/pdf/2308.09158">[Paper]</a>
+                                        <a href="https://github.com/ZhangYikaii/LAMDA-ZhiJian">[Code]</a>
+                                        <a href="https://zhijian.readthedocs.io/en/latest/">[Docs]</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+			<div class="awards">
+				<h2>🍚 Education</h2>
+				<ul class="awards-list">
+					<li><p><em>2023.09 - Now</em>, Ph.D., School of Artificial Intelligence, Nanjing University</p></li>
+					<li><p><em>2021.09 - 2023.06</em>, Master, School of Artificial Intelligence, Nanjing University</p></li>
+					<li><p><em>2017.09 - 2021.06</em>, Undergraduate, Computer Science and Technology Department, Nanjing University</p></li>
+					<li><p><em>2017.09 - 2021.06</em>, Minor Specialty, School of Mathematics, Nanjing University</p></li>
+				</ul>
+			</div>
+			<div class="awards">
+				<h2>🍰 Awards</h2>
+				<ul class="awards-list">
+					<li><p>国家奖学金. National Scholarship. <em>2022</em></p></li>
+					<li><p>南京大学优秀研究生标兵. <em>2023</em></p></li>
+					<li><p>华为突出贡献奖. <em>2023</em></p></li>
+					<li><p>兴业银行奖学金. Industrial Bank Co., Ltd. Scholarship. <em>2023</em></p></li>
+					<li><p>江苏银行奖学金. Bank Of Jiangsu Scholarship. <em>2024</em></p></li>
+					<li><p>AI Hackathon (Baichuan Intelligent x Amazon AWS) Awesome Star. <em>2023</em></p></li>
+				</ul>
+			</div>
+			<div class="awards">
+				<h2>🍦 Teaching Assistant</h2>
+				<ul class="awards-list">
+					<li><p><a href="https://www.lamda.nju.edu.cn/yehj/ml2022/ml2022.html">Introduction to Machine Learning</a>. (For undergraduate students, Spring, 2022; Autumn, <em>2022</em>)</p></li>
+					<li><p><a href="https://github.com/zhangyikaii/Auxiliary-Material-for-AI-Platform-Application-Course/wiki">AI Platform Application</a>. (For undergraduate students, Spring, <em>2022</em>)</p></li>
+					<li><p>Real Analysis and Functional Analysis. (For undergraduate students, Spring, <em>2023</em>)</p></li>
+				</ul>
+			</div>
+			<div class="awards">
+				<h2>🍞 Service Work</h2>
+				<ul class="awards-list">
+					<li><p>南京大学人工智能学院研究生会主席. <em>2022</em></p></li>
+					<li><p>南京大学人工智能学院乒乓球队队长. <em>2022</em></p></li>
+				</ul>
+			</div>
+			<br><br>
+			<p align="center">
+				<a href="https://github.com/zhangyikaii" alt="GitHub"><img src="./files/github.svg"></a> &nbsp;
+				<a href="mailto:zhangyk@lamda.nju.edu.cn" alt="Contact me"><img src="./files/email.svg"></a> &nbsp;
+				<a href="wechat-id:cifar10" alt="WeChat"><img src="./files/wechat.svg"></a>
+			</p>
+        </div>
+    </div>
+</body>
+</html>
