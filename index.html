@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yi-Kai Zhang (张逸凯) - Homepage</title>
+    <style>
+        /* Global Styles & Typography */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fcfcfc;
+        }
+        h1, h2, h3 {
+            margin: 0 0 15px 0;
+            font-family: 'Charter', Georgia, serif;
+        }
+        a {
+            color: #30305a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #e85f2e;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            flex-wrap: wrap; /* Added for mobile compatibility */
+        }
+        .navbar a {
+            margin: 5px 15px;
+            color: #30305a;
+            font-weight: bold;
+            position: relative;
+        }
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #e85f2e;
+            transition: width 0.3s ease;
+            -webkit-transition: width 0.3s ease;
+        }
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #e85f2e;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            padding-top: 80px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 29%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        .sidebar h2 {
+            margin: 15px 0 5px 0;
+            font-family: 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 29px;
+        }
+        .sidebar h3 {
+            margin: 2px 0 15px 0;
+            font-family: 'Trebuchet MS', serif;
+            font-size: 24px;
+            color: #555;
+        }
+        .profile-pic {
+            border-radius: 15%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info a, .contact-info span {
+            display: block;
+            margin: 8px 0;
+            color: #4b4b7c;
+            font-size: 15px;
+        }
+
+        /* Content Area */
+        .content {
+            width: 70%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            margin-left: 29%;
+        }
+        
+        /* Section Styles */
+        .section-block {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .section-block h2 {
+            color: #37375e;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .section-block h3 {
+            color: #4a4a7d;
+            margin-top: 25px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Experience & Lists styling */
+        .timeline-item, .paper-item {
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: transparent;
+            margin-bottom: 10px;
+        }
+        
+        /* Specific override for Internship Experience to reduce line spacing */
+        #experience .timeline-item {
+            padding: 6px 15px;
+            margin-bottom: 2px;
+        }
+
+        .timeline-item:hover, .paper-item:hover {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .date {
+            color: #888;
+            font-size: 0.95em;
+            font-style: italic;
+            min-width: 160px;
+            text-align: right;
+        }
+        
+        /* Publications styling */
+        .imgtable {
+            width: 100%;
+            border-spacing: 0;
+        }
+        .imgtable td {
+            padding: 10px 0;
+            vertical-align: top;
+        }
+        .paper-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #222;
+        }
+        .author-list {
+            color: #444;
+            margin: 5px 0;
+            font-size: 15px;
+        }
+        .conf-name {
+            color: rgb(173, 11, 11);
+            font-weight: bold;
+        }
+        .ccf-tag {
+            color: rgb(187, 138, 138);
+            font-size: 0.9em;
+            border: 1px solid rgba(187, 138, 138, 0.5);
+            padding: 1px 4px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .links-row a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 14px;
+            color: #4a4a7d;
+            font-weight: bold;
+        }
+        
+        /* Summary Blockquote */
+        .summary-box {
+            background-color: #f4f4f8;
+            border-left: 4px solid #6b6b9e;
+            padding: 12px 20px;
+            margin: 15px 0 25px 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .awards-list p {
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Staggered animation delays */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        /* Mobile Responsive Adjustments */
+        @media screen and (max-width: 850px) {
+            .container {
+                display: block;
+                padding-top: 100px; /* Space for wrapped navbar */
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                text-align: center;
+                padding: 0 20px;
+                margin-bottom: 30px;
+            }
+            .profile-pic {
+                margin: 0 auto;
+            }
+            .contact-info a, .contact-info span {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+            .content {
+                width: 100%;
+                margin-left: 0;
+                padding: 10px 20px;
+            }
+            .navbar a {
+                margin: 5px 8px;
+                font-size: 14px;
+            }
+            .flex-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .date {
+                text-align: left;
+                margin-top: 4px;
+                font-size: 0.9em;
+            }
+            .awards-list .date {
+                float: none !important;
+                display: block;
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Internships</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#service-work">Service</a>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <img src="files/kk.png" alt="Profile Picture" class="profile-pic">
+            <h2><span style="font-weight: bold;">Yi-Kai</span> Zhang</h2>
+            <h3>张逸凯</h3>
+            <p>Nanjing University</p>
+            <p>Ph.D. Student (3rd Year)<br>
+               <a href="https://www.lamda.nju.edu.cn/CH.MainPage.ashx"><b><span style="color: rgb(232, 95, 46);">L</span><span style="color: rgb(74, 75, 154);">A</span><span style="color: rgb(232, 95, 46);">M</span><span style="color: rgb(74, 75, 154);">DA</span></b> Group</a>
+            </p>
+            <p><b>LLMs, Multimodal LLMs</b><br><span style="font-weight: 200; font-size: 13px; color:#555;">Training, Recommendation, and Management</span></p>
+            
+            <div class="contact-info">
+                <a href="mailto:zhangyk@lamda.nju.edu.cn">🌒 zhangyk@lamda.nju.edu.cn</a>
+                <a href="https://github.com/Now-Join-Us">🌓 Github (Code Space of <em>Now-Join-Us</em>)</a>
+                <a href="https://scholar.google.com/citations?hl=en&user=T6ggORQAAAAJ">🌕 Google Scholar</a>
+                <span>🌗 WeChat ID: cifar10</span>
+            </div>
+        </div>
+
+        <div class="content">
+            
+            <div class="section-block delay-1" id="about">
+                <h2>🍼 About Me</h2>
+                <p>
+                    I am a <span style="font-weight: bold;">third-year Ph.D.</span> student (硕博连读) at the <a href="https://ai.nju.edu.cn/">School of Artificial Intelligence</a>, <a href="https://www.nju.edu.cn/">Nanjing University</a>. I am a member of the LAMDA Group (计算机软件新技术国家重点实验室), advised by Associate Professor <a href="http://www.lamda.nju.edu.cn/yehj">Han-Jia Ye (叶翰嘉)</a> and Professor <a href="http://www.lamda.nju.edu.cn/zhandc">De-Chuan Zhan (詹德川)</a>.
+                </p>
+                <p>
+                    My research currently focuses on <b>LLM RL Training</b> and <b>LLM Inference Routing</b>.
+                </p>
+            </div>
+
+            <div class="section-block delay-2" id="publications">
+                <h2>🥟 Research & Publications</h2>
+                
+                <h3>LLM RL Training</h3>
+                <div class="summary-box">
+                    <b>做了哪些事：</b> 研究在 RL 过程中，如何构建全新的 Value Model，以及如何用 Off-policy Guidance 下稳定学习。
+                </div>
+                
+                <div class="paper-item">
+                    <div class="paper-title"><i>V<sub>0</sub></i>: A Generalist Value Model for Any Policy at State Zero</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Zhiyuan Yao, Hongyan Hao, Yueqing Sun, Qi Gu, Hui Su, Xunliang Cai, De-Chuan Zhan, Han-Jia Ye</div>
+                    <div class="links-row">
+                        <a href="https://arxiv.org/abs/2602.03584">[Paper]</a> <a href="https://now-join-us.github.io/V0/">[Project Page]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title"><i>V<sub>0.5</sub></i>: Generalist Value Model as a Prior for Sparse RL Rollouts</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Yueqing Sun, Hongyan Hao, Qi Gu, Xunliang Cai, De-Chuan Zhan, Han-Jia Ye</div>
+                    <div class="links-row">
+                        <a href="https://arxiv.org/abs/2603.10848">[Paper]</a> <a href="https://now-join-us.github.io/V0_5/">[Project Page]</a> <a href="https://www.xiaohongshu.com/explore/69b568be000000002202b20b?app_platform=android&ignoreEngage=true&app_version=9.21.0&share_from_user_hidden=true&xsec_source=app_share&type=normal&xsec_token=CBgFdE415Z9RdvHSg5_rTUNnt_Ysy0GY04pXGjGXh4Zdk=&author_share=1&xhsshare=&shareRedId=ODtHNTg9PEw2NzUyOTgwNjY4OTc8RzlP&apptime=1773579866&share_id=143a81389c884e22adb2b5a5883828f1&share_channel=wechat">[小红书]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">LongCat-Flash-Thinking-2601 <span style="font-weight: normal; color: #666;">(Contributor)</span></div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">Spot Me: Bridging the Intention-Execution Gap with Expert-Guided Reinforcement Fine-tuning</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Co-authors in SJTU, De-Chuan Zhan, Han-Jia Ye</div>
+                </div>
+
+                <h3>
+                    LLM Inference Routing 
+                <span style="font-size: 0.8em; font-weight: normal; margin-left: 15px;">
+                    [Demo: <a href="http://lambda-router.org" target="_blank" style="text-decoration: underline;">http://lambda-router.org</a>]
+                </span>
+                </h3>
+                <div class="summary-box">
+                    <b>做了哪些事：</b> 研究部署时，如何将指令路由到开源/闭源、小/大模型上，我们的工作贯穿了整个 Routing 的发展。
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">Let the LLM Stick to Its Strengths: Learning to Route Economical LLM</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Shiyin Lu, Qing-Guo Chen, Weihua Luo, De-Chuan Zhan, Han-Jia Ye.</div>
+                    <div><span class="conf-name">NeurIPS 2025</span></div>
+                    <div class="links-row">
+                        <a href="#">[Paper]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">Capability Instruction Tuning: A New Paradigm for Dynamic LLM Routing</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, De-Chuan Zhan, Han-Jia Ye.</div>
+                    <div><span class="conf-name">AAAI 2025</span></div>
+                    <div class="links-row">
+                        <a href="https://arxiv.org/abs/2502.17282">[Paper]</a> <a href="https://github.com/ynulihao/LLMRouterBench">[Code]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">Model Spider: Learning to Rank Pre-Trained Models Efficiently</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Ting-Ji Huang, Yao-Xiang Ding, De-Chuan Zhan, Han-Jia Ye.</div>
+                    <div><span class="conf-name">NeurIPS 2023 (Spotlight)</span></div>
+                    <div class="links-row">
+                        <a href="https://arxiv.org/abs/2306.03900">[Paper]</a> <a href="https://github.com/zhangyikaii/Model-Spider">[Code]</a>
+                    </div>
+                </div>
+
+                <h3>Other Related Applications</h3>
+                
+                <div class="paper-item">
+                    <div class="paper-title"><span style="color: #4a4a7d;">[Multimodal LLM Data Engine]</span> ZooProbe: A Data Engine for Evaluating, Exploring, and Evolving Large-scale Training Data for Multimodal LLMs</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Shiyin Lu, Qing-Guo Chen, De-Chuan Zhan, Han-Jia Ye.</div>
+                    <div><span class="conf-name">ICLR 2025</span></div>
+                    <div class="links-row">
+                        <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/bd18189308a4c45c7d71ca83acf3deaa-Abstract-Conference.html">[Paper]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title"><span style="color: #4a4a7d;">[Multimodal LLM Architecture]</span> Wings: Learning Multimodal LLMs without Text-only Forgetting</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Shiyin Lu, Yang Li, Yanqing Ma, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, De-Chuan Zhan, Han-Jia Ye.</div>
+                    <div><span class="conf-name">NeurIPS 2024</span></div>
+                    <div class="links-row">
+                        <a href="https://arxiv.org/abs/2406.03496">[Paper]</a> <a href="https://github.com/AIDC-AI/Wings">[Code]</a>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title"><span style="color: #4a4a7d;">[Stable Training in CV]</span> Learning Debiased Representations via Conditional Attribute Interpolation</div>
+                    <div class="author-list"><b>Yi-Kai Zhang</b>, Qi-Wei Wang, Han-Jia Ye, De-Chuan Zhan.</div>
+                    <div><span class="conf-name">CVPR 2023</span></div>
+                    <div class="links-row">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Learning_Debiased_Representations_via_Conditional_Attribute_Interpolation_CVPR_2023_paper.pdf">[Paper]</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block delay-3" id="experience">
+                <h2>🧩 Internship Experience</h2>
+                
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>美团</b> - LongCat Life Agent Team
+                    </div>
+                    <div class="date">2025.10 - Present</div>
+                </div>
+                
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>阿里通义</b> - Agent Team
+                    </div>
+                    <div class="date">2025.08 - 2025.10</div>
+                </div>
+
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>小米</b> - MiMo-Embodied Team
+                    </div>
+                    <div class="date">2025.05 - 2025.08</div>
+                </div>
+
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>阿里国际</b> - Ovis Multimodal LLM Team
+                    </div>
+                    <div class="date">2024.03 - 2025.05</div>
+                </div>
+            </div>
+
+            <div class="section-block delay-4" id="education">
+                <h2>🍚 Education Background</h2>
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>Nanjing University</b>, School of Artificial Intelligence<br>
+                        <span style="color: #666; font-size: 15px;">Ph.D. in Computer Science and Technology (Enrolled as Master in 2021)</span>
+                    </div>
+                    <div class="date">2023.09 - Present</div>
+                </div>
+                <div class="timeline-item flex-row">
+                    <div>
+                        <b>Nanjing University</b>, Computer Science and Technology Department<br>
+                        <span style="color: #666; font-size: 15px;">B.Sc. in Computer Science and Technology (Minor in Math & Statistics)</span>
+                    </div>
+                    <div class="date">2017.09 - 2021.07</div>
+                </div>
+            </div>
+
+            <div class="section-block delay-5" id="awards">
+                <h2>🍰 Selected Awards</h2>
+                <ul class="awards-list">
+                    <li><p><b>国家奖学金</b> (National Scholarship) <span class="date" style="float: right;">2022</span></p></li>
+                    <li><p><b>南京大学优秀研究生标兵</b> <span class="date" style="float: right;">2023</span></p></li>
+                    <li><p><b>挑战杯全国铜奖</b> - Team Leader <span class="date" style="float: right;">2023</span></p></li>
+                    <li><p><b>华为突出贡献奖</b> <span class="date" style="float: right;">2023</span></p></li>
+                    <li><p><b>兴业银行、江苏银行等奖学金</b> <span class="date" style="float: right;">Multiple Years</span></p></li>
+                </ul>
+            </div>
+
+            <div class="section-block delay-5" id="service-work">
+                <h2>🍞 Service Work</h2>
+                <ul class="awards-list">
+                    <li><p>南京大学人工智能学院研究生会主席</p></li>
+                    <li><p>南京大学研究生常任代表</p></li>
+                    <li><p>学院乒乓球队队长</p></li>
+                </ul>
+            </div>
+
+            <br><br>
+            <p align="center" style="opacity: 0.7;">
+                <a href="https://github.com/zhangyikaii" alt="GitHub">Github</a> &nbsp;|&nbsp;
+                <a href="mailto:zhangyk@lamda.nju.edu.cn" alt="Contact me">Email</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
